@@ -17,6 +17,9 @@ public class RandomArt {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        GUI gui = new GUI(200,200,1);
+        
+        gui.applyColor();
     }
     
 }

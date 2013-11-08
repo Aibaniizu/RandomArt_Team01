@@ -25,6 +25,7 @@ public class GUI extends BufferedImage {
         for(int y = 0; y < height; y++) {
             for(int x = 0; x < width; x++) {
                 //setPixel(x, y);
+                this.setRGB(x,y,55);
             }
         }
     }
