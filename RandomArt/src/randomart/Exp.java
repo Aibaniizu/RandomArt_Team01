@@ -8,7 +8,7 @@ package randomart;
 
 /**
  *
- * @author Lowe
+ * @author Chanidapa
  */
 public class Exp {
     
