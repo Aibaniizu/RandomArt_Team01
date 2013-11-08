@@ -6,10 +6,26 @@
 
 package randomart;
 
+import java.awt.image.*;
+
 /**
  *
  * @author Tiia
  */
-public class GUI {
+public class GUI extends BufferedImage {
+
+    public GUI(int width, int height, int imageType) {
+        super(width, height, imageType);
+    }
     
+    
+    public void applyColor(){
+        int height = getHeight();
+        int width = getWidth();
+        for(int y = 0; y < height; y++) {
+            for(int x = 0; x < width; x++) {
+                //setPixel(x, y);
+            }
+        }
+    }
 }
