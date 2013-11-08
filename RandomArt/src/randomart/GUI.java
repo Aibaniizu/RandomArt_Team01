@@ -8,7 +8,7 @@ package randomart;
 
 /**
  *
- * @author Lowe
+ * @author Tiia
  */
 public class GUI {
     
