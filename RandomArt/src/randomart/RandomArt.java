@@ -17,10 +17,7 @@ import javax.swing.JFrame;
 public class RandomArt extends Canvas {
     private static final int WIDTH = 200;
     private static final int HEIGHT = 200;
-    
-    private Exp redExp = new Exp();
-    private Exp greenExp = new Exp();
-    private Exp blueExp = new Exp();
+  
     private ColorGen color = new ColorGen();
 
     @Override

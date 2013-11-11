@@ -20,6 +20,10 @@ public class ColorGen {
     private int intensity;
     private Random random = new Random(); 
     
+    private Exp redExp = new Exp();
+    private Exp greenExp = new Exp();
+    private Exp blueExp = new Exp();
+    
     public ColorGen() {
         
         
@@ -36,10 +40,10 @@ public class ColorGen {
     }
     
     public Color makeColor(/*redExp,greenExp,blueExp, pixelsPerUnit*/){
-    //redExp   = buildExp();
-    //greenExp = buildExp();
-    //blueExp  = buildExp();
-        
+    //redExp.buildExp();
+    //greenExp.buildExp();
+    //blueExp.buildExp();
+        //return new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
         return new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
     }
 

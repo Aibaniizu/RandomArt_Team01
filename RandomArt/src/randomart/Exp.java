@@ -19,4 +19,6 @@ public class Exp {
     // evaluate JavaScript code from String
     //Eval obj = engine.eval("1+2");
     //System.out.println( obj );
+    
+    //should buildExp(); method be on this class?
 }
