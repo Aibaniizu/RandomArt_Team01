@@ -12,7 +12,8 @@ import java.util.Random;
 
 
 /**
- *
+ * ColorGen is a class that generates color values
+ * 
  * @author Tiia
  */
 public class ColorGen {

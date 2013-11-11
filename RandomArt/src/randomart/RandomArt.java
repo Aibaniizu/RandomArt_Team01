@@ -10,7 +10,8 @@ import javax.swing.JFrame;
 
 
 /**
- *
+ * Main class that creates user interface
+ * 
  * @author Tiia
  */
 
