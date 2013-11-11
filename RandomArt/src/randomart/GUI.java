@@ -6,32 +6,34 @@
 
 package randomart;
 
-import java.awt.image.*;
-import javax.swing.JFrame;
+
 
 /**
  *
  * @author Tiia
  */
-public class GUI extends BufferedImage {
+public class GUI {
 
-    public GUI(int width, int height, int imageType) {
-        super(width, height, imageType);
+    private int intensity;
+    
+    public GUI() {
+        
     }
     
-    
-    public void applyColor(){
-        int height = getHeight();
-        int width = getWidth();
-        JFrame frame = new JFrame();
-        frame.setSize(width, height);
-        for(int y = 0; y < height; y++) {
-            for(int x = 0; x < width; x++) {
-                //setPixel(x, y);
-                this.setRGB(x,y,55);
-                
-            }
-        }
-        frame.setVisible(true);
+    public void plotIntensity(/*exp, pixelsPerUnit*/){
+        //intensity = ??;
     }
+    
+    public void plotColor(/*redExp,greenExp,blueExp, pixelsPerUnit*/){
+    //redPlane   = plotIntensity(redExp, pixelsPerUnit);
+    //greenPlane = plotIntensity(greenExp, pixelsPerUnit);
+    //bluePlane  = plotIntensity(blueExp, pixelsPerUnit);
+    }
+    
+    public void makeColor(/*redExp,greenExp,blueExp, pixelsPerUnit*/){
+    //redExp   = buildExp();
+    //greenExp = buildExp();
+    //blueExp  = buildExp();
+    }
+
 }
