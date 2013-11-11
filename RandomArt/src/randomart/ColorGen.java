@@ -6,17 +6,22 @@
 
 package randomart;
 
+import java.awt.Color;
+import java.util.Random;
+
 
 
 /**
  *
  * @author Tiia
  */
-public class GUI {
+public class ColorGen {
 
     private int intensity;
+    private Random random = new Random(); 
     
-    public GUI() {
+    public ColorGen() {
+        
         
     }
     
@@ -30,10 +35,12 @@ public class GUI {
     //bluePlane  = plotIntensity(blueExp, pixelsPerUnit);
     }
     
-    public void makeColor(/*redExp,greenExp,blueExp, pixelsPerUnit*/){
+    public Color makeColor(/*redExp,greenExp,blueExp, pixelsPerUnit*/){
     //redExp   = buildExp();
     //greenExp = buildExp();
     //blueExp  = buildExp();
+        
+        return new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
     }
 
 }
