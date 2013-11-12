@@ -51,12 +51,16 @@ public class Exp {
         String[] temp;
         temp = randomFunc();
         System.out.println(temp + "(pi*");
+        char braces;
+        braces = (char) checkBraces();
+        
     }
     
-    /*public void checkBraces(){
-        char i = '(';
+    public int checkBraces(){
+        String i = "(";
         count++;
-    }*/
+        return count;
+    }
 
     private Eval obj;
     private Eval eval;
