@@ -50,12 +50,12 @@ public class Exp {
     public void avg(){
         String[] temp;
         temp = randomFunc();
-        System.out.println(temp + "(pi*");
         char braces;
         braces = (char) checkBraces();
-        
+        System.out.println(temp + "(pi*" + braces);
     }
     
+    //count braces
     public int checkBraces(){
         String i = "(";
         count++;
