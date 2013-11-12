@@ -14,7 +14,11 @@ import java.util.Random;
  * @author Chanidapa 55130500210
  */
 public class Exp {
+    private int count;
 
+    public Exp() {
+        this.count = 0;
+    }
     
     
     //random x,y
@@ -23,11 +27,12 @@ public class Exp {
     }
     
     //random function
-    public void randomFunc(){
-        String[] func;
+    public String[] randomFunc(){
+        String[] func = null;
         //func = {"sin", "cos", "avg"};
         Random function = new Random();
         //int select = function.nextInt(func.length);
+        return func;
     }
     
     //check case
@@ -41,10 +46,17 @@ public class Exp {
         }*/
     }
     
+    //average
     public void avg(){
-        
+        String[] temp;
+        temp = randomFunc();
+        System.out.println(temp + "(pi*");
     }
     
+    /*public void checkBraces(){
+        char i = '(';
+        count++;
+    }*/
 
     private Eval obj;
     private Eval eval;
