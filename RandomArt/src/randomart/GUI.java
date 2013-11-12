@@ -20,12 +20,24 @@ public class GUI extends BufferedImage{
     private Exp redExp = new Exp();
     private Exp greenExp = new Exp();
     private Exp blueExp = new Exp();
-    private BufferedImage rI = new BufferedImage(200,200,1);
-    private BufferedImage gI = new BufferedImage(200,200,1);
-    private BufferedImage bI = new BufferedImage(200,200,1);
+    private GUI rI = new GUI(200,200,1);
+    private GUI gI = new GUI(200,200,1);
+    private GUI bI = new GUI(200,200,1);
 
     public GUI(int width, int height, int imageType) {
         super(width, height, imageType);
+    }
+    
+    public void setPixel(int x, int y, Color col)
+    {
+        int pixel = col.getRGB();
+        setRGB(x, y, pixel);
+    }
+    
+    public Color getPixel(int x, int y)
+    {
+        int pixel = getRGB(x, y);
+        return new Color(pixel);
     }
     
     public void plotIntensity(/*exp, pixelsPerUnit*/){
@@ -37,9 +49,7 @@ public class GUI extends BufferedImage{
         for(int x = 0; x < width; x++) {
             for(int y = 0; y < height; y++) {
                 
-                Color temp = new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
-                
-                setRGB(x,y, temp);
+                setPixel(x, y, getPixel(x, y));
             }
         }
     }
@@ -53,13 +63,10 @@ public class GUI extends BufferedImage{
         
         for(int x = 0; x < width; x++) {
             for(int y = 0; y < height; y++) {
-                Color tempRed = new Color(redPlane.getRed(x,y));
-                Color tempGreen = new Color(greenPlane.getGreen(x,y));
-                Color tempBlue = new Color(bluePlane.getBlue(x,y));
                 
-                Color temp = new Color(tempRed,tempGreen,tempBlue);
+                Color tempColor = new Color(rI.getRed(x,y),gI.getGreen(x,y),bI.getBlue(x,y));
                 
-                setRGB(x,y, temp);
+                setRGB(x,y, tempColor);
             }
         }
     }
@@ -70,5 +77,22 @@ public class GUI extends BufferedImage{
     //blueExp.buildExp();
         //return new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
         return new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
+    }
+
+
+    private void setRGB(int x, int y, Color temp) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private int getRed(int x, int y) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private int getGreen(int x, int y) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private int getBlue(int x, int y) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
