@@ -14,11 +14,16 @@ public class Eval {
      private int x;
      private int y;
      private int z;
+     private Exp exp;
 
     public Eval() {
-        this.x = 0;
-        this.y = 0;
         this.z = 0;
+    }
+    
+    public void randomXY(){
+        this.x = (int) Math.random();
+        this.y = (int) Math.random();
+        //this.z = Eval(exp, x, y);
     }
      
      
