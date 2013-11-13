@@ -29,9 +29,9 @@ public class Exp {
     //random function
     public String[] randomFunc(){
         String[] func = null;
-        //func = {"sin", "cos", "avg"};
+        func = {"sin", "cos", "avg"};
         Random function = new Random();
-        //int select = function.nextInt(func.length);
+        int select = function.nextInt(func.length);
         return func;
     }
     
@@ -68,8 +68,8 @@ public class Exp {
     // create a JavaScript engine
     ScriptEngine engine = factory.getEngineByName("JavaScript");
     // evaluate JavaScript code from String
-    //Eval obj = engine.eval("1+2");
-    //System.out.println( obj );
+    Eval obj = engine.eval("1+2");
+    System.out.println( obj );
     
     //should buildExp(); method be on this class?
 }
