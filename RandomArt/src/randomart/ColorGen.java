@@ -45,7 +45,7 @@ public class ColorGen {
     //greenExp.buildExp();
     //blueExp.buildExp();
         //return new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
-        return new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
+        return new Color(random.nextInt(256), 255, 255);
     }
     
     public void print(){
