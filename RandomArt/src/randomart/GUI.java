@@ -64,35 +64,18 @@ public class GUI extends BufferedImage{
         for(int x = 0; x < width; x++) {
             for(int y = 0; y < height; y++) {
                 
-                Color tempColor = new Color(rI.getRed(x,y),gI.getGreen(x,y),bI.getBlue(x,y));
+               // Color tempColor = new Color(rI.getRed(x,y),gI.getGreen(x,y),bI.getBlue(x,y));
                 
-                setRGB(x,y, tempColor);
+               // setRGB(x,y, tempColor);
             }
         }
     }
     
-    public Color makeColor(/*redExp,greenExp,blueExp, pixelsPerUnit*/){
+    public void makeColor(/*redExp,greenExp,blueExp, pixelsPerUnit*/){
     //redExp.buildExp();
     //greenExp.buildExp();
     //blueExp.buildExp();
-        //return new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
-        return new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
+    
     }
 
-
-    private void setRGB(int x, int y, Color temp) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private int getRed(int x, int y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private int getGreen(int x, int y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private int getBlue(int x, int y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

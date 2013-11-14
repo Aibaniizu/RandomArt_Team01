@@ -7,7 +7,7 @@ package randomart;
 import java.awt.Canvas;
 import java.awt.Graphics;
 import javax.swing.JFrame;
-
+import javax.swing.JLabel;
 
 /**
  * Main class that creates user interface
@@ -39,6 +39,7 @@ public class RandomArt extends Canvas {
 
         frame.setSize(WIDTH, HEIGHT);
         frame.add(new RandomArt());
+        
 
         frame.setVisible(true);
     }
