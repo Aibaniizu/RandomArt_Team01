@@ -12,9 +12,10 @@
      */
     public class Exp {
         private String temp;
-
+        private int currentIndex;
         public Exp(){
             this.temp = "";
+            this.currentIndex = 0;
         }
         
         public void expr(){
@@ -33,26 +34,33 @@
 
                 switch(value){
                     case 0:
-                        temp += "sin(pi*";
+                        this.temp += "sin(pi*";
+                        
                         break;
                     case 1:
-                        temp += "cos(pi*";
+                        this.temp += "cos(pi*";
+                        
                         break;
                     case 2: 
-                        temp += "avg(";
+                        this.temp += "avg(";
                         average();
+                        this.temp += ")";
                         break;
                     case 3: 
-                        temp += "x";
+                        this.temp += "x";
+                        countBracket();
                         break;
                     default: 
-                        temp += "y";
+                        this.temp += "y";
+                        countBracket();
                         break;
                 }
             }
-            System.out.println(this.temp);    
+            System.out.println(this.temp);
+            System.out.println(this.temp.length());
         }
         
+        //average method
         public void average(){
     
             int count = 0;
@@ -63,12 +71,15 @@
                     break;
                 case 1: this.temp += "ya ";
                     break;
-                case 2: this.temp += "sin(pi*a ";
+                case 2: this.temp += "sin(pi*a) ";
+   
                     break;
-                case 3: this.temp += "cos(pi*a ";
+                case 3: this.temp += "cos(pi*a) ";
+                    
                     break;
                 default: this.temp += "avg(a ";
                     average();
+                    temp += ")";
                     break;
             }
             this.temp += ",";
@@ -86,6 +97,26 @@
             }
         }
         
+        
+        public void countBracket(){
+            System.out.println("Current Index = " + this.currentIndex);
+            System.out.println("Content = " + this.temp);
+            System.out.println("Current length = " + this.temp.length());
+            int count = 0;
+            for(int i = this.currentIndex; i < this.temp.length(); i++){
+                if(this.temp.charAt(i) == '(' && this.temp.charAt(i-1) != 'g'){
+                    count += 1;
+                }
+                this.currentIndex = i;
+            }
+            for(int i = 0; i < count; i++){
+                this.temp += ")";
+            }
+            System.out.println(this.temp);
+            System.out.println("Current Index after count = " + this.currentIndex);
+            System.out.println("Count = " + count);
+            
+        }
         public static void main(String[] args){
             Exp temp = new Exp();
             temp.expr();
