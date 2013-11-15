@@ -43,10 +43,10 @@ public class Eval {
         // evaluate JavaScript code from String
         //String foo = "avg(45,15)";
         engine.eval("sin = Math.sin; cos = Math.cos; pi = Math.PI; function avg(a, b){ return (a+b)/2;}");
-        int x = 45;
-        int y = 30;
+        int x = 23;
+        int y = 27;
         engine.eval("x =" + x + "; y = " + y + ";");
-        System.out.println(engine.eval("avg(sin(pi*x),cos(pi*y))"));    
+        System.out.println(engine.eval("cos(pi*cos(pi*x))*sin(pi*cos(pi*sin(pi*sin(pi*y))))*avg(avg(cos(pi*y) ,x),x)"));    
           
     }
 }
