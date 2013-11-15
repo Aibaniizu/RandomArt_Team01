@@ -6,12 +6,15 @@
 
 package randomart;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+
 /**
  *
  * @author Chanidapa
  */
 public class Eval {
-     private int x;
+     /*private int x;
      private int y;
      private int z;
      private Exp exp;
@@ -30,5 +33,20 @@ public class Eval {
         this.x = (int) Math.random();
         this.y = (int) Math.random();
         //this.z = Eval(exp, x, y);
-    }  
+    }*/
+    
+    // Just for debug
+    public static void main(String args[]) throws Exception{
+        ScriptEngineManager factory = new ScriptEngineManager();
+        // create a JavaScript engine
+        ScriptEngine engine = factory.getEngineByName("JavaScript");
+        // evaluate JavaScript code from String
+        //String foo = "avg(45,15)";
+        engine.eval("sin = Math.sin; cos = Math.cos; pi = Math.PI; function avg(a, b){ return (a+b)/2;}");
+        int x = 45;
+        int y = 30;
+        engine.eval("x =" + x + "; y = " + y + ";");
+        System.out.println(engine.eval("avg(sin(pi*x),cos(pi*y))"));    
+          
+    }
 }
