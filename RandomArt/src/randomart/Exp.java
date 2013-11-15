@@ -5,60 +5,36 @@
  */
 
 package randomart;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptEngine;
-import java.util.Random;
 
 /**
  *
  * @author Chanidapa 55130500210
  */
 public class Exp {
-    /*private int count;
-
-    public Exp() {
-        this.count = 0;
-    }
     
     
-    //random x,y
-    public void xy(){
+    public static void main(String[] args){
+        
+        String temp = ""; 
+        for(int i = 0; i <= 4; i++){
+            
+            int a = 2;
+            double b = Math.random();
+            int value = (int)(a*b);
+            switch(value){
+                case 0: 
+                    temp += "sin(pi*";
+                    break;
+                default: 
+                    temp +=  "cos(pi*";
+                    break;
+                /*default: 
+                    temp = "dummy";
+                    break;*/
+            }
+            
+        }
+        System.out.println(temp);
         
     }
-    
-    //random function
-    public String[] randomFunc(){
-        String[] func = null;
-        //func = {"sin", "cos", "avg"};
-        Random function = new Random();
-        int select = function.nextInt(func.length);
-        return func;
-    }*/
-    
-    //check case
-    //public void checkCase(){
-        /*switch(select){
-            case "sin": System.out.println("sin");
-                break;
-            case "cos": System.out.println("cos");
-                break;
-            case "avg"
-        }
-    }*/
-    
-    //average
-    /*public void avg(){
-        String[] temp;
-        temp = randomFunc();
-        char braces;
-        braces = (char) checkBraces();
-        System.out.println(temp + "(pi*" + braces);
-    }*/
-    
-    //count braces
-    /*public int checkBraces(){
-        String i = "(";
-        count++;
-        return count;
-    }*/
 }
