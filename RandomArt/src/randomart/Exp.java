@@ -19,7 +19,7 @@
         
         public void expr(){
             
-            for(int i = 0; i <= 5; i++){
+            for(int i = 0; i <= 8; i++){
                
                 int value = 1;
                 
@@ -50,27 +50,40 @@
                         break;
                 }
             }
-            System.out.println(temp);    
+            System.out.println(this.temp);    
         }
         
         public void average(){
-            String tempAvg = "";
+    
             int count = 0;
             count = (int)Math.round(Math.random()*5);
             
             switch(count){
-                case 0: tempAvg += "xa";
+                case 0: this.temp += "xa ";
                     break;
-                case 1: tempAvg += "ya";
+                case 1: this.temp += "ya ";
                     break;
-                case 2: tempAvg += "sin(pi*a";
+                case 2: this.temp += "sin(pi*a ";
                     break;
-                case 3: tempAvg += "cos(pi*a";
+                case 3: this.temp += "cos(pi*a ";
                     break;
-                default: tempAvg += "avg(a";
+                default: this.temp += "avg(a ";
+                    average();
                     break;
             }
-            System.out.println(tempAvg); 
+            this.temp += ",";
+            
+            int count2 = 0;
+            switch(count2){
+                case 0: this.temp += "xb ";
+                    break;
+                case 1: this.temp += "yb ";
+                    break;
+                case 2: this.temp += "sin(pi*b ";
+                    break;
+                default: this.temp += "cos(pi*b ";
+                    break;
+            }
         }
         
         public static void main(String[] args){
