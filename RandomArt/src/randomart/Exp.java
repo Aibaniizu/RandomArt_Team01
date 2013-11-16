@@ -60,7 +60,7 @@ import java.util.LinkedList;
              LinkedList<Integer> copyStage = (LinkedList<Integer>)this.stage.clone();
              return copyStage;
          }
-               
+         //for create function, stage
          public double genExp(boolean closeBrack){
               int random;
               if(this.count == 0){
@@ -118,47 +118,49 @@ import java.util.LinkedList;
          public double avg(double x, double y){
              return (x+y)/2.0;
          }
-         
-         public double computeExp(boolean closeBrack, LinkedList<Integer> stage){
+         //getStage
+         //setXY
+         //compute function
+         public double computeExp(LinkedList<Integer> stage){
                               
                int stageCase = stage.removeFirst();
                
                switch(stageCase){
                    case 0: 
-                       expressionString += "sin(pi*";
+                       //expressionString += "sin(pi*";
                        //this.stage.add(0);
-                       return Math.sin(Math.PI*computeExp(true, stage));
+                       return Math.sin(Math.PI*computeExp(stage));
                        
                    case 1:
-                       expressionString += "cos(pi*";
+                       //expressionString += "cos(pi*";
                        //this.stage.add(1);
-                       return Math.cos(Math.PI*computeExp(true, stage));
+                       return Math.cos(Math.PI*computeExp(stage));
                        
                    case 2:
-                       expressionString += "avg(";
+                       //expressionString += "avg(";
                        //this.stage.add(2);
-                       double first = computeExp(false, stage);
-                       expressionString += ",";
-                       double second = computeExp(true, stage);
-                       expressionString += ")";
+                       double first = computeExp(stage);
+                       //expressionString += ",";
+                       double second = computeExp(stage);
+                       //expressionString += ")";
                        return avg(first, second);
                    case 3: 
                        //this.stage.add(3);
-                       if(closeBrack == true){
-                           expressionString += "x)";                           
+                       //if(closeBrack == true){
+                           /*expressionString += "x)";                           
                        }else{
                            expressionString += "x";
-                       }
+                       }*/
                        
                        return x;
                        
                    default:
                        //this.stage.add(4);
-                       if(closeBrack == true){
+                       /*if(closeBrack == true){
                            expressionString += "y)";
                        }else{
                            expressionString += "y";
-                       }
+                       }*/
                        return y;
                        
                }
