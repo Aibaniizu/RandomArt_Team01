@@ -14,7 +14,7 @@ import javax.script.ScriptEngineManager;
  * @author Chanidapa
  */
 public class Eval {
-     /*private int x;
+     private int x;
      private int y;
      private int z;
      private Exp exp;
@@ -33,10 +33,10 @@ public class Eval {
         this.x = (int) Math.random();
         this.y = (int) Math.random();
         //this.z = Eval(exp, x, y);
-    }*/
+    }
     
-    // Just for debug
-    public static void main(String args[]) throws Exception{
+    //Just for debug
+    /*public static void main(String args[]) throws Exception{
         ScriptEngineManager factory = new ScriptEngineManager();
         // create a JavaScript engine
         ScriptEngine engine = factory.getEngineByName("JavaScript");
@@ -48,5 +48,5 @@ public class Eval {
         engine.eval("x =" + x + "; y = " + y + ";");
         System.out.println(engine.eval("cos(pi*cos(pi*x))*sin(pi*cos(pi*sin(pi*sin(pi*y))))*avg(avg(cos(pi*y) ,x),x)"));    
           
-    }
+    }*/
 }
