@@ -34,7 +34,12 @@ import java.util.LinkedList;
          public void setXY(double x, double y){
              this.x = x;
              this.y = y;
+             System.out.println("In Method SetXY");
+             System.out.println(this.x);
+             System.out.println(this.y);
          }
+         
+         
          public String getExpString(){
              int countOpen = 0;
              int countClose = 0;             
@@ -113,26 +118,26 @@ import java.util.LinkedList;
              return (x+y)/2;
          }
          
-         public double computeExp(boolean closeBrack){             
-               int stageCase = this.stage.removeFirst();
+         public double computeExp(boolean closeBrack, LinkedList stage){
+               int stageCase = (int) stage.removeFirst();
                
                switch(stageCase){
                    case 0: 
                        expressionString += "sin(pi*";
                        this.stage.add(0);
-                       return Math.sin(Math.PI*computeExp(true));
+                       return Math.sin(Math.PI*computeExp(true, stage));
                        
                    case 1:
                        expressionString += "cos(pi*";
                        this.stage.add(1);
-                       return Math.cos(Math.PI*computeExp(true));
+                       return Math.cos(Math.PI*computeExp(true, stage));
                        
                    case 2:
                        expressionString += "avg(";
                        this.stage.add(2);
-                       double first = computeExp(false);
+                       double first = computeExp(false, stage);
                        expressionString += ",";
-                       double second = computeExp(true);
+                       double second = computeExp(true, stage);
                        expressionString += ")";
                        return avg(first, second);
                    case 3: 
@@ -160,17 +165,17 @@ import java.util.LinkedList;
          
        
          
-         public static void main(String[] args) throws Exception{
-            Exp redExp = new Exp();
-            redExp.setXY(12.3, 20.5);
-            System.out.println(redExp.genExp(true));
-            System.out.println(redExp.getExpString());
-            LinkedList dump = redExp.getStage();
-            System.out.println(dump);
-            //redExp.setXY(12.3, 20.5);
-            System.out.println(redExp.computeExp(true));
-             System.out.println(redExp.getExpString());
-            
-         }
+//         public static void main(String[] args) throws Exception{
+//            Exp redExp = new Exp();
+//            redExp.setXY(12.3, 20.5);
+//            System.out.println(redExp.genExp(true));
+//            System.out.println(redExp.getExpString());
+//            LinkedList dump = redExp.getStage();
+//            System.out.println(dump);
+//            //redExp.setXY(12.3, 20.5);
+//            System.out.println(redExp.computeExp(true));
+//             System.out.println(redExp.getExpString());
+//            
+//         }
     }
         
