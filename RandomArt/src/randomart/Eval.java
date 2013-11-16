@@ -35,18 +35,5 @@ public class Eval {
         //this.z = Eval(exp, x, y);
     }
     
-    //Just for debug
-    /*public static void main(String args[]) throws Exception{
-        ScriptEngineManager factory = new ScriptEngineManager();
-        // create a JavaScript engine
-        ScriptEngine engine = factory.getEngineByName("JavaScript");
-        // evaluate JavaScript code from String
-        //String foo = "avg(45,15)";
-        engine.eval("sin = Math.sin; cos = Math.cos; pi = Math.PI; function avg(a, b){ return (a+b)/2;}");
-        int x = 23;
-        int y = 27;
-        engine.eval("x =" + x + "; y = " + y + ";");
-        System.out.println(engine.eval("cos(pi*cos(pi*x))*sin(pi*cos(pi*sin(pi*sin(pi*y))))*avg(avg(cos(pi*y) ,x),x)"));    
-          
-    }*/
+   
 }
