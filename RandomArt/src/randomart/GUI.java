@@ -16,16 +16,22 @@ import java.util.Random;
  */
 public class GUI extends BufferedImage{
     private int intensity;
-    private Random random = new Random(); 
+    private Random random; 
     private int pixelsPerUnit; 
     
-    private Exp redExp = new Exp();
-    private Exp greenExp = new Exp();
-    private Exp blueExp = new Exp();
+    private Exp redExp;
+    private Exp greenExp;
+    private Exp blueExp;
 
     public GUI(int width, int height, int imageType) {
         super(width, height, imageType);
+        
+        random = new Random();
         pixelsPerUnit = 150;
+        
+        redExp = new Exp();
+        greenExp = new Exp();
+        blueExp = new Exp();
     }
     
     public void setPixel(int x, int y, Color col)
@@ -39,7 +45,7 @@ public class GUI extends BufferedImage{
         return new Color(getRGB(x, y));
     }
     
-    public BufferedImage plotIntensity(/*exp,*/){
+    public BufferedImage plotIntensity(Exp exp){
         
         //int height = 2 * pixelsPerUnit + 1;
         int width = 2 * pixelsPerUnit + 1;
@@ -50,8 +56,11 @@ public class GUI extends BufferedImage{
             for(int py = 0; py < width; py++) {
                 float x = (float)(px - pixelsPerUnit) / pixelsPerUnit;
                 float y = -(float)(py - pixelsPerUnit) / pixelsPerUnit;
-                int z = evalExpr(exp,x,y);
-                intensity = int(z * 127.5 + 127.5);
+                
+                Eval e = new Eval(exp,x,y);
+                int z = e;
+                
+                intensity = (int)(z * 127.5 + 127.5);
                  
                 img.setRGB(px, py, intensity);
             }
