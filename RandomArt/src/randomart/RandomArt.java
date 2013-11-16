@@ -12,18 +12,19 @@ import javax.swing.JFrame;
  * Main class that creates user interface
  * 
  * @author Tiia
+ * @version 16/11/2013
  */
 
 public class RandomArt extends Canvas {
     private static final int WIDTH = 200;
     private static final int HEIGHT = 200;
   
-    private ColorGen color = new ColorGen();
+    private GUI color = new GUI();
 
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-
+        color.print();
         for(int x = 0; x < WIDTH; x++) {
             for(int y = 0; y < HEIGHT; y++) {
                 g.setColor(color.makeColor());

@@ -13,54 +13,35 @@ import java.util.Random;
 /**
  *
  * @author Tiia
+ * @version 16/11/2013
  */
-public class GUI extends BufferedImage{
-    private int intensity;
+public class GUI{
     private Random random; 
     private int pixelsPerUnit; 
     
-    private Exp redExp;
-    private Exp greenExp;
-    private Exp blueExp;
 
-    public GUI(int width, int height, int imageType) {
-        super(width, height, imageType);
-        
+    public GUI() {
         random = new Random();
         pixelsPerUnit = 150;
         
-        redExp = new Exp();
-        greenExp = new Exp();
-        blueExp = new Exp();
     }
-    
-    public void setPixel(int x, int y, Color col)
-    {
-        int pixel = col.getRGB();
-        setRGB(x, y, pixel);
-    }
-    
-    public Color getPixel(int x, int y)
-    {
-        return new Color(getRGB(x, y));
-    }
-    
+
+    //cretes an image of single expression
     public BufferedImage plotIntensity(Exp exp){
         
-        //int height = 2 * pixelsPerUnit + 1;
-        int width = 2 * pixelsPerUnit + 1;
+        int side = 2 * pixelsPerUnit + 1;
         
-        BufferedImage img = new BufferedImage(width,width,1);
+        BufferedImage img = new BufferedImage(side,side,1);
 
-        for(int px = 0; px < width; px++) {
-            for(int py = 0; py < width; py++) {
+        for(int px = 0; px < side; px++) {
+            for(int py = 0; py < side; py++) {
                 float x = (float)(px - pixelsPerUnit) / pixelsPerUnit;
                 float y = -(float)(py - pixelsPerUnit) / pixelsPerUnit;
                 
                 Eval e = new Eval(exp,x,y);
                 int z = e;
                 
-                intensity = (int)(z * 127.5 + 127.5);
+                int intensity = (int)(z * 127.5 + 127.5);
                  
                 img.setRGB(px, py, intensity);
             }
@@ -68,15 +49,16 @@ public class GUI extends BufferedImage{
         return img;
     }
     
-    public BufferedImage plotColor(redExp,greenExp,blueExp, pixelsPerUnit){
+    //merges images/layers created on plotIntensity method
+    public BufferedImage plotColor(Exp redExp,Exp greenExp,Exp blueExp){
         
-    BufferedImage redPlane   = plotIntensity(redExp, pixelsPerUnit);
-    BufferedImage greenPlane = plotIntensity(greenExp, pixelsPerUnit);
-    BufferedImage bluePlane  = plotIntensity(blueExp, pixelsPerUnit);
+    BufferedImage redPlane   = plotIntensity(redExp);
+    BufferedImage greenPlane = plotIntensity(greenExp);
+    BufferedImage bluePlane  = plotIntensity(blueExp);
         
     BufferedImage combined = new BufferedImage(redPlane.getWidth(), redPlane.getWidth(), BufferedImage.TYPE_INT_ARGB);
 
-        // paint both images, preserving the alpha channels
+        // merge layers
         Graphics g = combined.getGraphics();
         g.drawImage(redPlane, 0, 0, null);
         g.drawImage(greenPlane, 0, 0, null);
@@ -85,11 +67,20 @@ public class GUI extends BufferedImage{
         return combined;
     }
     
-    public void makeColor(/*redExp,greenExp,blueExp, pixelsPerUnit*/){
+    
+    public Color makeColor(/*Exp redExp,Exp greenExp,Exp blueExp*/){
     //redExp.buildExp();
     //greenExp.buildExp();
     //blueExp.buildExp();
+    return new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
+    }
     
+    
+    public void print(){
+        //System.out.println(redExp);
+        //System.out.println(greenExp);
+        //System.out.println(blueExp);
+        System.out.println("Test");
     }
 
 }
