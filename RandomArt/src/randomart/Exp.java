@@ -34,9 +34,9 @@ import java.util.LinkedList;
          public void setXY(double x, double y){
              this.x = x;
              this.y = y;
-             System.out.println("In Method SetXY");
-             System.out.println(this.x);
-             System.out.println(this.y);
+//             System.out.println("In Method SetXY");
+//             System.out.println(this.x);
+//             System.out.println(this.y);
          }
          
          
@@ -56,8 +56,9 @@ import java.util.LinkedList;
              return expressionString;
          }
          
-         public LinkedList getStage(){
-             return this.stage;
+         public LinkedList<Integer> getStage(){
+             LinkedList<Integer> copyStage = (LinkedList<Integer>)this.stage.clone();
+             return copyStage;
          }
                
          public double genExp(boolean closeBrack){
@@ -115,33 +116,34 @@ import java.util.LinkedList;
          }
          
          public double avg(double x, double y){
-             return (x+y)/2;
+             return (x+y)/2.0;
          }
          
-         public double computeExp(boolean closeBrack, LinkedList stage){
-               int stageCase = (int) stage.removeFirst();
+         public double computeExp(boolean closeBrack, LinkedList<Integer> stage){
+                              
+               int stageCase = stage.removeFirst();
                
                switch(stageCase){
                    case 0: 
                        expressionString += "sin(pi*";
-                       this.stage.add(0);
+                       //this.stage.add(0);
                        return Math.sin(Math.PI*computeExp(true, stage));
                        
                    case 1:
                        expressionString += "cos(pi*";
-                       this.stage.add(1);
+                       //this.stage.add(1);
                        return Math.cos(Math.PI*computeExp(true, stage));
                        
                    case 2:
                        expressionString += "avg(";
-                       this.stage.add(2);
+                       //this.stage.add(2);
                        double first = computeExp(false, stage);
                        expressionString += ",";
                        double second = computeExp(true, stage);
                        expressionString += ")";
                        return avg(first, second);
                    case 3: 
-                       this.stage.add(3);
+                       //this.stage.add(3);
                        if(closeBrack == true){
                            expressionString += "x)";                           
                        }else{
@@ -151,7 +153,7 @@ import java.util.LinkedList;
                        return x;
                        
                    default:
-                       this.stage.add(4);
+                       //this.stage.add(4);
                        if(closeBrack == true){
                            expressionString += "y)";
                        }else{
