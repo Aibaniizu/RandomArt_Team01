@@ -167,7 +167,9 @@ import java.util.LinkedList;
          
          }
          
-       
+       public String getExpStr(){
+           return expressionString;
+       }
          
 //         public static void main(String[] args) throws Exception{
 //            Exp redExp = new Exp();
