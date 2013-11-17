@@ -6,18 +6,22 @@
 
 package randomart;
 
+import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.util.Random;
+import javax.swing.JFrame;
 /**
  *
  * @author Tiia
  * @version 16/11/2013
  */
-public class GUI{
+public class GUI extends Canvas{
     private Random random; 
-    private int pixelsPerUnit; 
+    private int pixelsPerUnit;
+    private int side;
+    
     
 
     public GUI() {
@@ -29,7 +33,7 @@ public class GUI{
     //cretes an image of single expression
     public BufferedImage plotIntensity(Exp exp){
         
-        int side = 2 * pixelsPerUnit + 1;
+        side = 2 * pixelsPerUnit + 1;
         
         BufferedImage img = new BufferedImage(side,side,1);
 
@@ -64,10 +68,12 @@ public class GUI{
         g.drawImage(greenPlane, 0, 0, null);
         g.drawImage(bluePlane, 0, 0, null);
         
+        
         return combined;
     }
-    
-    
+    public int getSide(){
+        return side;
+    }
     public Color makeColor(/*Exp redExp,Exp greenExp,Exp blueExp*/){
     //redExp.buildExp();
     //greenExp.buildExp();
@@ -76,11 +82,26 @@ public class GUI{
     }
     
     
-    public void print(){
-        //System.out.println(redExp);
-        //System.out.println(greenExp);
-        //System.out.println(blueExp);
-        System.out.println("Test");
+    public void print(Exp redExp,Exp greenExp,Exp blueExp){
+        System.out.println(redExp.getExpStr());
+        System.out.println(greenExp.getExpStr());
+        System.out.println(blueExp.getExpStr());
+    }
+    
+    public static void main(String[] args) {
+        GUI gui = new GUI();
+        Exp red = new Exp();
+        Exp green = new Exp();
+        Exp blue = new Exp();
+        
+        gui.print(red,green,blue);
+        
+        JFrame frame = new JFrame();
+
+        frame.setSize(gui.getSide(), gui.getSide()+200);
+        frame.add(new GUI());
+
+        frame.setVisible(true);
     }
 
 }
