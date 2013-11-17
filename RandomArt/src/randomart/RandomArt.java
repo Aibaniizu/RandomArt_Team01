@@ -155,10 +155,9 @@ public class RandomArt extends Canvas{
     
     
     public void print(Exp redExp,Exp greenExp,Exp blueExp){
-        System.out.println(redExp.getExpString());
-        System.out.println(greenExp.getExpString());
-        System.out.println(blueExp.getExpString());
-        System.out.println("test");
+        System.out.println("red: " + redExp.getExpString());
+        System.out.println("green: " + greenExp.getExpString());
+        System.out.println("blue: " + blueExp.getExpString());
     }
     
     public static void main(String[] args) {
