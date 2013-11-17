@@ -61,13 +61,14 @@ import java.awt.image.BufferedImage;
 import java.util.Random;
 import javax.swing.JFrame;
 /**
- *
+ * Main class that also creates the GUI
+ * 
  * @author Tiia
  * @version 16/11/2013
  */
 public class RandomArt extends Canvas{
     private final Random random = new Random(); 
-    private final int pixelsPerUnit = 300;
+    private final int pixelsPerUnit = 150;
     private int side;
 
     
@@ -154,9 +155,10 @@ public class RandomArt extends Canvas{
     
     
     public void print(Exp redExp,Exp greenExp,Exp blueExp){
-        System.out.println(redExp.getExpStr());
-        System.out.println(greenExp.getExpStr());
-        System.out.println(blueExp.getExpStr());
+        System.out.println(redExp.getExpString());
+        System.out.println(greenExp.getExpString());
+        System.out.println(blueExp.getExpString());
+        System.out.println("test");
     }
     
     public static void main(String[] args) {
