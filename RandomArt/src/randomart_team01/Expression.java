@@ -5,8 +5,10 @@
 package randomart_team01;
 
 /**
- *
+ * A Class that creates an expression
+ * 
  * @author erngg
+ * @version 18/11/2013
  */
 public class Expression extends Random{
     

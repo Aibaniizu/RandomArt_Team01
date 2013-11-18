@@ -5,8 +5,10 @@
 package randomart_team01;
 
 /**
- *
- * @author erngg
+ * Class that returns randomly X or Y
+ * 
+ * @author erngg and Tiia
+ * @version 18/11/2013
  */
 public class InputXY extends Random{
     
