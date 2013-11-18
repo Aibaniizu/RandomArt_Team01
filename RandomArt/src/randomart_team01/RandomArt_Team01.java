@@ -19,7 +19,7 @@ public class RandomArt_Team01 extends JFrame{
      */
     public static void main(String[] args) {
         
-        JFrame j = new JFrame();
+        FrameGUI j = new FrameGUI();
         j.setTitle("RandomArt_Team01");
         j.setSize(500,500);
         j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
