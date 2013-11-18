@@ -6,7 +6,7 @@ package randomart_team01;
 
 /**
  *
- * @author erngg
+ * @author Chanidapa
  * @version 18/11/2013
  */
 public abstract class Random {

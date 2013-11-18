@@ -9,7 +9,7 @@ import java.awt.Graphics;
 /**
  * A Class that creates the shown image and prints the expressions used
  * 
- * @author erngg and Tiia
+ * @author Chanidapa and Tiia
  * @version 18/11/2013
  */
 public class GUI extends JPanel{

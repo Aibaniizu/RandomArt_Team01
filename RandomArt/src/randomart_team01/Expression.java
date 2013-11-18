@@ -7,7 +7,7 @@ package randomart_team01;
 /**
  * A Class that creates an expression
  * 
- * @author erngg
+ * @author Chanidapa
  * @version 18/11/2013
  */
 public class Expression extends Random{
@@ -64,6 +64,8 @@ public class Expression extends Random{
          return ((nextNode.randomFunction(x,y)) + (nextNode.randomFunction(x,y)) )/2;
      }*/
      
+     
+     //for print the text
      public String expression(){
          
          String word;
