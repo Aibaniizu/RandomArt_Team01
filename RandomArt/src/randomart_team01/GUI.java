@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import java.awt.Graphics;
 /**
  *
- * @author erngg
+ * @author erngg and Tiia
  */
 public class GUI extends JPanel{
     private Expression red,green,blue;
@@ -16,6 +16,7 @@ public class GUI extends JPanel{
     public GUI(){
         setShowPicture();
         repaint();
+        printExpression();
     }
     
     public void setShowPicture(){
@@ -54,6 +55,12 @@ public class GUI extends JPanel{
         }
       }
        
+    }
+    
+    public void printExpression(){       
+        System.out.println("red : " + red.expression());
+        System.out.println("green : " + green.expression());
+        System.out.println("blue : " + blue.expression());
     }
     
 }
