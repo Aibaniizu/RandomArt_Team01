@@ -20,8 +20,10 @@ import java.awt.*;
 public class FrameGUI extends JFrame{
     private GUI panel;
     private JPanel down;
+    private JPanel top;
     private JButton generateButton;
     private JButton functionButton;
+    private JButton printString;
     
     public FrameGUI() {
     setLayout(new BorderLayout());
@@ -34,6 +36,10 @@ public class FrameGUI extends JFrame{
     down.add(function());
     add(down,BorderLayout.SOUTH);
     
+    top = new JPanel();
+    top.setLayout(new GridLayout(1,1));
+    top.add(printString());
+    add(top,BorderLayout.NORTH);
     
 }
     public JButton generate(){
@@ -42,10 +48,17 @@ public class FrameGUI extends JFrame{
         generateButton.setText("Generate");
         return generateButton;
     }
+    
     public JButton function(){
         functionButton = new JButton();
         functionButton.setSize(new Dimension(200,20));
         functionButton.setText("function");
         return functionButton;
+    }
+    
+    public JButton printString(){
+        printString = new JButton();
+        printString.setSize(50, 50);
+        return printString;
     }
 }
