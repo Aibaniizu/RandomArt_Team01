@@ -10,14 +10,14 @@ package randomart_team01;
  */
 public class InputXY extends Random{
     
-    private int randomXY;
+    private double randomXY;
     private String result;
     
-    public InputXY(int randomXY){
+    public InputXY(double randomXY){
         this.randomXY = randomXY;
     }
     public double randomFunction(double x, double y){
-        if(this.randomXY == 0){
+        if(this.randomXY <= 0.5){
            return x;
         }
         else{
@@ -27,7 +27,7 @@ public class InputXY extends Random{
     }
     
     public String expression(){
-        if(this.randomXY == 'x'){
+        if(this.randomXY <= 0.5){
             result = "X";
         }
         else{

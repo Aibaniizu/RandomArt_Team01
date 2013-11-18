@@ -31,7 +31,7 @@ public class Expression extends Random{
              nextNode2 = new Expression(this.level-1, next);
          }
          else{
-             int ran = (int) (Math.random()*2);
+             double ran = (Math.random());
              nextNode = new InputXY(ran);
              nextNode2 = new InputXY(ran);
          }
