@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author erngg and Tiia
+ * @author Chanidapa and Tiia
  * @version 19/11/2013
  */
 public class FrameGUI extends JPanel{
@@ -45,13 +45,13 @@ public class FrameGUI extends JPanel{
          down.add(function());
          add(down,BorderLayout.SOUTH);
     
-}
+}   //set picture at center
     public void addGUI(){
         panel = new GUI();
         add(this.panel,BorderLayout.CENTER);
     }
     
-    
+    //set generate button
     public JButton generate(){
         generateButton = new JButton();
         generateButton.setSize(new Dimension(200,20));
@@ -68,6 +68,7 @@ public class FrameGUI extends JPanel{
         return generateButton;
     }
     
+    //set function button
     public JButton function(){
         functionButton = new JButton();
         functionButton.setSize(new Dimension(200,20));
@@ -95,6 +96,7 @@ public class FrameGUI extends JPanel{
         return functionButton;
     }
     
+    //set text for show each color
     public void setText(){
         text = new TextField();
         text1 = new TextField();

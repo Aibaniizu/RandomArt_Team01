@@ -26,6 +26,7 @@ public class GUI extends JPanel{
         setButton();
     }
     
+    //set show pictuer
     public void setShowPicture(){
         int level = (int)(Math.random()*9+4);
         int random = (int)(Math.random()*3);
@@ -34,9 +35,11 @@ public class GUI extends JPanel{
         green = new Expression(level, random);
         blue = new Expression(level, random);
     }
-        public void setButton(){
-        JButton dfdf = new JButton(" ");
-         dfdf.addActionListener(new ActionListener() {
+    
+    //set button
+    public void setButton(){
+        JButton button = new JButton(" ");
+        button.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -76,6 +79,7 @@ public class GUI extends JPanel{
        
     }
     
+    // print function each color
     public String printExpressionR(){ 
         return red.expression();
     }

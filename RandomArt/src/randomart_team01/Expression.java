@@ -21,7 +21,8 @@ public class Expression extends Random{
     
     public Expression(){
     }
-
+     
+    //input leval and input next node for random
      public Expression(int level, int random){
          this.level = level;
          this.randomFunc = random;
@@ -29,6 +30,7 @@ public class Expression extends Random{
          random(level);
      }
      
+     //random next node
      public void random(int level){
          if(level > 1){
              nextNode = new Expression(this.level-1, next);

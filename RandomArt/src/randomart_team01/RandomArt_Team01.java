@@ -10,8 +10,8 @@ import javax.swing.JPanel;
 /**
  * A Main Class
  * 
- * @author erngg
- * @version 18/11/2013
+ * @author Chanidapa
+ * @version 19/11/2013
  */
 public class RandomArt_Team01 extends JFrame{
 
