@@ -5,6 +5,7 @@
 package randomart_team01;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  * A Main Class
@@ -17,14 +18,16 @@ public class RandomArt_Team01 extends JFrame{
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
         
         FrameGUI j = new FrameGUI();
-        j.setTitle("RandomArt_Team01");
-        j.setSize(500,500);
-        j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        j.add(new GUI());
-        j.setVisible(true);
+        JFrame frame = new JFrame();
+        frame.setTitle("Random_Team01");
+        frame.setSize(500,500);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(j);
+        frame.setVisible(true);
         
     }
 }
