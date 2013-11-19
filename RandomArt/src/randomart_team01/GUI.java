@@ -18,7 +18,7 @@ public class GUI extends JPanel{
     public GUI(){
         setShowPicture();
         repaint();
-        printExpression();
+        //printExpression();
     }
     
     public void setShowPicture(){
@@ -59,7 +59,8 @@ public class GUI extends JPanel{
        
     }
     
-    public void printExpression(){       
+    public void printExpression(){ 
+        System.out.println("Functions");
         System.out.println("red : " + red.expression());
         System.out.println("green : " + green.expression());
         System.out.println("blue : " + blue.expression());

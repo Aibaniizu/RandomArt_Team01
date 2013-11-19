@@ -76,12 +76,13 @@ public class FrameGUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 //FrameGUI temp = new FrameGUI();
-                Expression red = new Expression();
+                /*Expression red = new Expression();
                 Expression green = new Expression();
                 Expression blue = new Expression();
                 System.out.println("red : " + red.expression());
                 System.out.println("green : " + green.expression());
-                System.out.println("blue : " + blue.expression());
+                System.out.println("blue : " + blue.expression());*/
+                panel.printExpression();
             }
         });
         return functionButton;
