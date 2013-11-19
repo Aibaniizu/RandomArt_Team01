@@ -6,6 +6,9 @@ package randomart_team01;
 import java.awt.Color;
 import javax.swing.JPanel;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 /**
  * A Class that creates the shown image and prints the expressions used
  * 
@@ -16,9 +19,11 @@ public class GUI extends JPanel{
     private Expression red,green,blue;
     
     public GUI(){
+        
+        
         setShowPicture();
         repaint();
-        //printExpression();
+        setButton();
     }
     
     public void setShowPicture(){
@@ -29,7 +34,19 @@ public class GUI extends JPanel{
         green = new Expression(level, random);
         blue = new Expression(level, random);
     }
+        public void setButton(){
+        JButton dfdf = new JButton(" ");
+         dfdf.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                repaint();
+            }
+        });
+    }
     
+
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         paint(g);
@@ -37,7 +54,7 @@ public class GUI extends JPanel{
     }
     
     public void paint(Graphics g){
-        
+        setShowPicture();
       for(int i=0;i<getHeight();i++){
         for(int j=0;j<getWidth();j++){
             
@@ -59,11 +76,14 @@ public class GUI extends JPanel{
        
     }
     
-    public void printExpression(){ 
-        System.out.println("Functions");
-        System.out.println("red : " + red.expression());
-        System.out.println("green : " + green.expression());
-        System.out.println("blue : " + blue.expression());
+    public String printExpressionR(){ 
+        return red.expression();
+    }
+    public String printExpressionG(){
+        return green.expression();
+    }
+    public String printExpressionB(){
+        return blue.expression();
     }
     
 }
