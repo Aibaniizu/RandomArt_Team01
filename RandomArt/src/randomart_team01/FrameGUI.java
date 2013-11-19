@@ -19,33 +19,31 @@ import java.awt.event.ActionListener;
  * @author erngg and Tiia
  * @version 19/11/2013
  */
-public class FrameGUI extends JFrame{
+public class FrameGUI extends JPanel{
     private GUI panel ;
     private JPanel down;
     private JPanel top;
     private JButton generateButton;
     private JButton functionButton;
     private JButton printString;
+    private TextField text,text1,text2;
+
     
     ImageIcon imageFun = new ImageIcon("Function.jpg");
     ImageIcon imageGen = new ImageIcon("Generate.jpg");
     
     public FrameGUI() {
         
-        setLayout(new BorderLayout());
-        addGUI();
-    
-        down = new JPanel();
-        down.setLayout(new FlowLayout());
-        down.add(generate());
-        down.add(function());
-        add(down,BorderLayout.SOUTH);
-        
-    
-//    top = new JPanel();
-//    top.setLayout(new GridLayout(1,1));
-//    top.add(printString());
-//    add(top,BorderLayout.NORTH);
+         setText();
+         setLayout(new BorderLayout());
+         panel = new GUI();
+         
+         add(panel,BorderLayout.CENTER);
+         down = new JPanel();
+         down.setLayout(new FlowLayout());
+         down.add(generate());
+         down.add(function());
+         add(down,BorderLayout.SOUTH);
     
 }
     public void addGUI(){
@@ -53,27 +51,19 @@ public class FrameGUI extends JFrame{
         add(this.panel,BorderLayout.CENTER);
     }
     
-    public void removeGUI(){
-        remove(panel);
-    }
     
     public JButton generate(){
         generateButton = new JButton();
         generateButton.setSize(new Dimension(200,20));
         generateButton.setText("Generate");
         generateButton.add(new JLabel(imageGen));
-        generateButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                /*
-                GUI generate = new GUI();
-                generate.setShowPicture();
+        generateButton.addActionListener(new ActionListener(){
+          
+            public void actionPerformed(ActionEvent e){
+             
                 repaint();
-                        */
-                removeGUI();
-                addGUI();
             }
+
         });
         return generateButton;
     }
@@ -87,15 +77,29 @@ public class FrameGUI extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                panel.printExpression();
+                
+                JFrame show = new JFrame();
+                show.setLayout(new GridLayout(3,1,1,1));
+                show.add(text);
+                show.add(text1);
+                show.add(text2);
+                show.setSize(900,150);
+                text.setText("RED = "+ panel.printExpressionR());
+                text1.setText("GREEN = "+ panel.printExpressionG());
+                text2.setText("BLUE = "+ panel.printExpressionB());
+             
+                show.setVisible(true);
             }
+
         });
         return functionButton;
     }
     
-    public JButton printString(){
-        printString = new JButton();
-        printString.setSize(50, 50);
-        return printString;
+    public void setText(){
+        text = new TextField();
+        text1 = new TextField();
+        text2 = new TextField();
+
+
     }
 }
