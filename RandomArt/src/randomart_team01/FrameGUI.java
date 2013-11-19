@@ -16,8 +16,8 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author erngg
- * @version 
+ * @author erngg and Tiia
+ * @version 19/11/2013
  */
 public class FrameGUI extends JFrame{
     public GUI panel ;
@@ -69,19 +69,12 @@ public class FrameGUI extends JFrame{
     public JButton function(){
         functionButton = new JButton();
         functionButton.setSize(new Dimension(200,20));
-        functionButton.setText("function");
+        functionButton.setText("Print Function");
         functionButton.add(new JLabel(imageFun));
         functionButton.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                //FrameGUI temp = new FrameGUI();
-                /*Expression red = new Expression();
-                Expression green = new Expression();
-                Expression blue = new Expression();
-                System.out.println("red : " + red.expression());
-                System.out.println("green : " + green.expression());
-                System.out.println("blue : " + blue.expression());*/
                 panel.printExpression();
             }
         });
