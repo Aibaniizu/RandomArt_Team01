@@ -19,6 +19,8 @@ public class Expression extends Random{
     private Random nextNode2;
     private int next;
     
+    public Expression(){
+    }
 
      public Expression(int level, int random){
          this.level = level;
@@ -51,7 +53,7 @@ public class Expression extends Random{
                  break;
              case 2: 
                  random =  ((nextNode.randomFunction(x,y)) + (nextNode2.randomFunction(x,y)) )/2;
-                 //System.out.println("xxx");
+                
                  break;
              default:
                  random = 0;
