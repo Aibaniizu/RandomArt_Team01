@@ -20,7 +20,7 @@ import java.awt.event.ActionListener;
  * @version 19/11/2013
  */
 public class FrameGUI extends JFrame{
-    public GUI panel ;
+    private GUI panel ;
     private JPanel down;
     private JPanel top;
     private JButton generateButton;
@@ -33,8 +33,7 @@ public class FrameGUI extends JFrame{
     public FrameGUI() {
         
         setLayout(new BorderLayout());
-        panel = new GUI();
-        add(this.panel,BorderLayout.CENTER);
+        addGUI();
     
         down = new JPanel();
         down.setLayout(new FlowLayout());
@@ -49,6 +48,15 @@ public class FrameGUI extends JFrame{
 //    add(top,BorderLayout.NORTH);
     
 }
+    public void addGUI(){
+        panel = new GUI();
+        add(this.panel,BorderLayout.CENTER);
+    }
+    
+    public void removeGUI(){
+        remove(panel);
+    }
+    
     public JButton generate(){
         generateButton = new JButton();
         generateButton.setSize(new Dimension(200,20));
@@ -58,9 +66,13 @@ public class FrameGUI extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                /*
                 GUI generate = new GUI();
                 generate.setShowPicture();
                 repaint();
+                        */
+                removeGUI();
+                addGUI();
             }
         });
         return generateButton;
